@@ -37,6 +37,7 @@ export const useTmdb = () => {
       const genresMapped = parsed.genres.map(genre => genre.name);
       const details = {
         title: parsed.title,
+        release_year: parsed.release_date.slice(0, 4),
         poster: parsed.poster_path
           ? 'https://image.tmdb.org/t/p/w342/' + parsed.poster_path
           : 'https://placehold.co/342x513',
@@ -91,5 +92,24 @@ export const useTmdb = () => {
     }
   };
 
-  return { getTrending, getDetails, getCast, getReviews };
+  const getSearch = async (query, page) => {
+    try {
+      const response = await fetch(
+        `${BASE_URL}/3/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}`,
+        options
+      );
+      const parsed = await response.json();
+      const pageCount = parsed.total_pages;
+      const results = parsed.results.map(result => ({
+        id: result.id,
+        title: result.title,
+        release_year: result.release_date.slice(0, 4),
+      }));
+      return { results, pageCount };
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  return { getTrending, getDetails, getCast, getReviews, getSearch };
 };
