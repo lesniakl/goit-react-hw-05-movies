@@ -15,6 +15,7 @@ export default function Cast() {
 
   useEffect(() => {
     fillCast();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

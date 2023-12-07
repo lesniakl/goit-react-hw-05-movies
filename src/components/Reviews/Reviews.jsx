@@ -15,6 +15,7 @@ export default function Reviews() {
 
   useEffect(() => {
     fillReviews();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -33,6 +33,7 @@ export default function Movies() {
     const currPage = page ? Number(page) : 1;
     setCurrentPage(currPage);
     fillSearch(query, currPage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const handleSearch = e => {
