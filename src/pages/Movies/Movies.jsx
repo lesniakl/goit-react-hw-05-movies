@@ -1,5 +1,9 @@
 import React from 'react';
 
 export default function Movies() {
-  return <div>Movies</div>;
+  return (
+    <div>
+      <h1>Trending today</h1>
+    </div>
+  );
 }
