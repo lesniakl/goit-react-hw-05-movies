@@ -1,10 +1,16 @@
 import React from 'react';
 
-export default function Searchbar() {
+export default function Searchbar({ handleSearch }) {
   return (
     <div>
-      <form>
-        <input></input>
+      <form onSubmit={handleSearch}>
+        <input
+          name="search"
+          type="text"
+          autoFocus
+          placeholder="Enter a title"
+        />
+        <button type="submit">Search</button>
       </form>
     </div>
   );
