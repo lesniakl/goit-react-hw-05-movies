@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { lazy } from 'react';
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import css from './Movies.module.css';
 
 const Searchbar = lazy(() => import('components/Searchbar/Searchbar'));
 const Pagination = lazy(() => import('components/Pagination/Pagination'));
@@ -61,25 +62,28 @@ export default function Movies() {
   };
 
   return (
-    <div>
+    <div className={css.moviesContainer}>
       <Searchbar handleSearch={handleSearch} />
-      {search &&
-        search.map(result => {
-          const movieLink = `/movies/${result.id}`;
-          return (
-            <Link
-              key={result.id}
-              to={movieLink}
-              state={{
-                from: `/movies/?query=${searchParams.get(
-                  'query'
-                )}&page=${currentPage}`,
-              }}
-            >
-              {result.title} ({result.release_year})
-            </Link>
-          );
-        })}
+      <ul className={css.moviesList}>
+        {search &&
+          search.map(result => {
+            const movieLink = `/movies/${result.id}`;
+            return (
+              <li key={result.id} className={css.moviesItem}>
+                <Link
+                  to={movieLink}
+                  state={{
+                    from: `/movies/?query=${searchParams.get(
+                      'query'
+                    )}&page=${currentPage}`,
+                  }}
+                >
+                  {result.title} ({result.release_year})
+                </Link>
+              </li>
+            );
+          })}
+      </ul>
       {pageCount > 1 && (
         <Pagination
           page={currentPage}

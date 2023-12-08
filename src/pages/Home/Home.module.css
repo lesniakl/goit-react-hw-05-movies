@@ -1,0 +1,19 @@
+.homeContainer {
+  padding: 0 20px;
+}
+
+.homeHeader {
+  text-align: center;
+}
+
+.homeList {
+  list-style: decimal;
+}
+
+.homeItem {
+  font-weight: 500;
+  margin: 10px;
+  max-width: fit-content;
+  border-radius: 6%;
+  padding: 10px;
+}

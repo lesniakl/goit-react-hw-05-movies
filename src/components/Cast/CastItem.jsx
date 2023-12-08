@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import css from './Cast.module.css';
 
 export default function CastItem({ name, character, photo }) {
   return (
-    <li>
+    <li className={css.castItem}>
       <img src={photo} alt={name} />
-      <span>{name}</span>
-      <span>Character: {character}</span>
+      <div className={css.castDesc}>
+        <span>
+          <b>{name}</b>
+        </span>
+        <span>Character: {character}</span>
+      </div>
     </li>
   );
 }

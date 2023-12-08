@@ -1,0 +1,25 @@
+.sharedNav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #a3c4eb;
+  display: flex;
+  gap: 30px;
+  font-size: 25px;
+  padding: 15px 20px;
+  border-bottom: solid 1px black;
+  -webkit-box-shadow: -1px 7px 38px -16px rgba(66, 68, 90, 1);
+  -moz-box-shadow: -1px 7px 38px -16px rgba(66, 68, 90, 1);
+  box-shadow: -1px 7px 38px -16px rgba(66, 68, 90, 1);
+}
+
+.navLink {
+  font-weight: 500;
+  text-decoration: none;
+  text-shadow: 4px 4px 6px rgba(66, 68, 90, 0.46);
+}
+
+.navLink:hover {
+  text-shadow: 4px 4px 6px rgba(107, 171, 189, 1);
+}

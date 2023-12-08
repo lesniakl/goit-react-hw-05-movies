@@ -20,6 +20,7 @@ export default function Reviews() {
 
   return (
     <ul>
+      {reviews.length < 1 && <span>There're no reviews for this movie.</span>}
       {reviews.map(review => (
         <ReviewsItem
           key={review.id}

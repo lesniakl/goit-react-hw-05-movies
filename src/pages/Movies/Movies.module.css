@@ -1,0 +1,14 @@
+.moviesContainer {
+  padding: 20px;
+}
+
+.moviesList {
+  list-style: circle;
+}
+
+.moviesItem {
+  font-weight: 500;
+  padding: 10px;
+  max-width: fit-content;
+  border-radius: 6%;
+}

@@ -1,0 +1,11 @@
+.castItem {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.castDesc {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
